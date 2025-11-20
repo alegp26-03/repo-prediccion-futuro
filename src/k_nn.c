@@ -31,6 +31,15 @@ float calcular_distancia(float *v1, float *v2, int cols) {
 
 void ejecutar_predicciones(float *datos_locales, int mis_filas, int columnas, int k, 
                            int num_procs, int pid, float *datos_globales, int total_filas) {
+
+    // Limpiar ficheros de salida en el arranque (Solo Master)
+    if (pid == MASTERPID) {
+        // "w" trunca el fichero a longitud 0 (lo vacía)
+        FILE *fp;
+        fp = fopen("Predicciones.txt", "w"); if(fp) fclose(fp);
+        fp = fopen("MAPE.txt", "w"); if(fp) fclose(fp);
+        // Tiempo.txt NO se borra, se suele acumular ("a") para los logs de pruebas
+    }
     
     int num_predicciones = 1000; // Según enunciado
     // Si el fichero es pequeño (ej: test 1x), ajustamos para no salirnos de rango
@@ -163,7 +172,6 @@ void ejecutar_predicciones(float *datos_locales, int mis_filas, int columnas, in
             
             for (int v = 0; v < k; v++) {
                 int dia_vecino = todos_candidatos[v].indice_dia;
-                // El valor a promediar es el día SIGUIENTE al vecino encontrado
                 int idx_global_vecino_next = (dia_vecino + 1) * columnas;
                 
                 for (int h = 0; h < columnas; h++) {
@@ -175,18 +183,32 @@ void ejecutar_predicciones(float *datos_locales, int mis_filas, int columnas, in
             for (int h = 0; h < columnas; h++) prediccion[h] /= k;
 
             // --- CÁLCULO DEL MAPE ---
-            // MAPE = (100/h) * Sum( |Real - Pred| / |Real| )
             float error_dia = 0.0;
             for (int h = 0; h < columnas; h++) {
-                if (fabs(valores_reales[h]) > 0.0001) { // Evitar div por 0
+                if (fabs(valores_reales[h]) > 0.0001) { 
                     error_dia += fabs(valores_reales[h] - prediccion[h]) / fabs(valores_reales[h]);
                 }
             }
             error_dia = (error_dia / columnas) * 100.0;
             mape_acumulado += error_dia;
 
-            // (Opcional) Guardar en fichero cada X iteraciones para no saturar I/O
-            // ...
+            // --- ESCRITURA EN FICHEROS (NUEVO) ---
+            // 1. Escribir en Predicciones.txt
+            FILE *f_pred = fopen("Predicciones.txt", "a");
+            if (f_pred) {
+                for (int h = 0; h < columnas; h++) {
+                    fprintf(f_pred, "%.2f ", prediccion[h]);
+                }
+                fprintf(f_pred, "\n");
+                fclose(f_pred);
+            }
+
+            // 2. Escribir en MAPE.txt
+            FILE *f_mape = fopen("MAPE.txt", "a");
+            if (f_mape) {
+                fprintf(f_mape, "%.2f\n", error_dia);
+                fclose(f_mape);
+            }
 
             free(todos_candidatos);
             free(prediccion);
