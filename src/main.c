@@ -105,22 +105,34 @@ int main(int argc, char *argv[]) {
            pid, filas_por_proceso, elems_por_proceso);
 
     // ======================================================
-    // 6. LÓGICA DEL ALGORITMO (Próximos pasos)
+    // 6. LÓGICA DEL ALGORITMO (Integración K-NN)
     // ======================================================
     
-    // Aquí llamaremos a la función 'knn_predict' pasando 'datos_locales'
-    // ...
+    // Llamada a la función principal del algoritmo
+    // Pasamos todos los datos necesarios. 
+    // 'datos_globales' solo es válido en PID 0 (Master), en los demás es NULL, y la función lo sabe.
+    
+    ejecutar_predicciones(
+        datos_locales, 
+        filas_por_proceso, 
+        col_h, 
+        k_vecinos, 
+        prn, 
+        pid, 
+        datos_globales, 
+        filas_totales
+    );
 
     // ======================================================
     // 7. GESTIÓN DEL RESTO (Solo Master)
     // ======================================================
-    if (pid == MASTERPID && rest_filas > 0) {
-        printf("[MASTER] Procesando manualmente las %d filas sobrantes...\n", rest_filas);
-        // Puntero al inicio de las filas sobrantes en datos_globales
-        // int inicio_resto = filas_por_proceso * prn * col_h;
-        // procesar_resto(&datos_globales[inicio_resto], ...);
-    }
-
+    // NOTA: En la implementación actual de ejecutar_predicciones,
+    // el Master usa datos_globales para evaluar. 
+    // El "resto" de filas que no se repartieron en Scatter NO participan en la búsqueda local de los esclavos,
+    // pero el Master sí podría buscar en ellas. 
+    // Para esta práctica, ignorar esas pocas filas del resto en la búsqueda suele ser aceptable 
+    // dado que son < num_procesos (ej: sobran 2 filas de 10.000).
+    
     // ** Liberación de memoria y finalización
     if (datos_globales) free(datos_globales);
     if (datos_locales) free(datos_locales);
