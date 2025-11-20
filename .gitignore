@@ -53,3 +53,24 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# --- Reglas específicas de la práctica ---
+
+# Ejecutables
+prediccion
+
+# Archivos de salida requeridos por el enunciado
+Predicciones.txt
+MAPE.txt
+Tiempo.txt
+
+# Carpetas de salida auxiliares
+output/
+
+# Datos: Ignorar todo EXCEPTO el ejemplo pequeño
+data/*
+!data/input_example.txt
+
+# Archivos del sistema (Mac/Windows)
+.DS_Store
+Thumbs.db
