@@ -7,32 +7,34 @@
 #include <stdlib.h>
 #include <mpi.h>
 #include <omp.h>
-#include "utils.h"    // Incluimos nuestra cabecera
-#include "k_nn.h"     // (Lo crearemos luego)
+#include "utils.h"
+#include "k_nn.h"
 
 #define MASTERPID 0
-#define TAG 0
 
 int main(int argc, char *argv[]) {
     
-    // ** Variables MPI
     int pid, prn, provided;
     
-    // ** Variables del problema (Estilo EPD 7 p2.c)
-    int filas_totales = 0, col_h = 0;     // Dimensiones leídas del fichero
-    int filas_por_proceso = 0;            // splitSize (cuantas filas para cada uno)
-    int elems_por_proceso = 0;            // splitSize * columnas
-    int rest_filas = 0;                   // restSize (lo que sobra para el master)
-    
-    float *datos_globales = NULL;         // Matriz completa (Solo en Master)
-    float *datos_locales = NULL;          // Trozo que recibe cada proceso
+    // Variables para tiempos de inicialización
+    double t1, t2;
+    double t_lectura = 0.0;
+    double t_scatter = 0.0;
 
-    // ** Inicialización
+    // Variables del problema
+    int filas_totales = 0, col_h = 0;
+    int filas_por_proceso = 0;
+    int elems_por_proceso = 0;
+    
+    float *datos_globales = NULL;
+    float *datos_locales = NULL;
+
+    // Inicialización MPI
     MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &provided);
     MPI_Comm_rank(MPI_COMM_WORLD, &pid);
     MPI_Comm_size(MPI_COMM_WORLD, &prn);
 
-    // ** Validación argumentos
+    // Validación argumentos
     if (argc != 5) {
         if (pid == MASTERPID) printf("Uso: ./prediccion <K> <fichero> <procesos> <hilos>\n");
         MPI_Finalize();
@@ -43,42 +45,33 @@ int main(int argc, char *argv[]) {
     char *ruta_fichero = argv[2];
     int num_hilos = atoi(argv[4]);
 
-    // Configurar OpenMP
     omp_set_num_threads(num_hilos);
 
     // ======================================================
-    // 1. LECTURA DE DATOS (Solo Master)
+    // 1. LECTURA DE DATOS (Cronometrada)
     // ======================================================
+    t1 = MPI_Wtime(); // Start crono lectura
     if (pid == MASTERPID) {
         datos_globales = leer_fichero(ruta_fichero, &filas_totales, &col_h, pid);
     }
+    t2 = MPI_Wtime(); // Stop crono lectura
+    t_lectura = t2 - t1;
 
     // ======================================================
-    // 2. DIFUSIÓN DE METADATOS (Broadcast)
+    // 2. DIFUSIÓN DE METADATOS
     // ======================================================
-    // Los esclavos necesitan saber cuántas columnas (h) tiene cada fila para reservar memoria
-    // y cuántas filas hay en total para calcular los repartos.
-    
     MPI_Bcast(&filas_totales, 1, MPI_INT, MASTERPID, MPI_COMM_WORLD);
     MPI_Bcast(&col_h, 1, MPI_INT, MASTERPID, MPI_COMM_WORLD);
 
     // ======================================================
-    // 3. CÁLCULO DEL REPARTO (Lógica EPD 7)
+    // 3. CÁLCULO DEL REPARTO
     // ======================================================
-    
-    // División entera: cuántas filas le tocan a cada proceso de forma equitativa
     filas_por_proceso = filas_totales / prn;
-    
-    // El resto se lo queda el Master (o se trata aparte)
-    rest_filas = filas_totales % prn;
-
-    // Número de floats que enviaremos (filas * columnas)
     elems_por_proceso = filas_por_proceso * col_h;
 
     // ======================================================
-    // 4. RESERVA DE MEMORIA LOCAL (En todos los procesos)
+    // 4. RESERVA DE MEMORIA LOCAL
     // ======================================================
-    // Cada proceso necesita un buffer para recibir SU parte
     datos_locales = (float *)malloc(elems_por_proceso * sizeof(float));
     if (datos_locales == NULL && elems_por_proceso > 0) {
         perror("Error malloc local");
@@ -86,32 +79,25 @@ int main(int argc, char *argv[]) {
     }
 
     // ======================================================
-    // 5. DISTRIBUCIÓN (MPI_Scatter)
+    // 5. DISTRIBUCIÓN (Scatter Cronometrado)
     // ======================================================
-    // Repartimos la matriz principal. 
-    // OJO: El Master envía 'datos_globales' y recibe su parte en 'datos_locales' también.
-    
-    MPI_Scatter(datos_globales,              // Send buffer (Relevante solo en Master)
-                elems_por_proceso,           // Send count (floats por proceso)
-                MPI_FLOAT,                   // Send Type
-                datos_locales,               // Recv buffer (Donde guardo mi parte)
-                elems_por_proceso,           // Recv count
-                MPI_FLOAT,                   // Recv Type
+    t1 = MPI_Wtime(); // Start crono scatter
+    MPI_Scatter(datos_globales,              
+                elems_por_proceso,           
+                MPI_FLOAT,                   
+                datos_locales,               
+                elems_por_proceso,           
+                MPI_FLOAT,                   
                 MASTERPID, 
                 MPI_COMM_WORLD);
-
-    // DEBUG: Comprobar que todos han recibido algo
-    printf("[PID %d] Recibidas %d filas (%d elementos). Listo para procesar.\n", 
-           pid, filas_por_proceso, elems_por_proceso);
+    t2 = MPI_Wtime(); // Stop crono scatter
+    t_scatter = t2 - t1;
 
     // ======================================================
-    // 6. LÓGICA DEL ALGORITMO (Integración K-NN)
+    // 6. LÓGICA DEL ALGORITMO
     // ======================================================
     
-    // Llamada a la función principal del algoritmo
-    // Pasamos todos los datos necesarios. 
-    // 'datos_globales' solo es válido en PID 0 (Master), en los demás es NULL, y la función lo sabe.
-    
+    // Pasamos los tiempos medidos a la función principal
     ejecutar_predicciones(
         datos_locales, 
         filas_por_proceso, 
@@ -120,20 +106,12 @@ int main(int argc, char *argv[]) {
         prn, 
         pid, 
         datos_globales, 
-        filas_totales
+        filas_totales,
+        ruta_fichero,
+        t_lectura,  // <--- Nuevo
+        t_scatter   // <--- Nuevo
     );
 
-    // ======================================================
-    // 7. GESTIÓN DEL RESTO (Solo Master)
-    // ======================================================
-    // NOTA: En la implementación actual de ejecutar_predicciones,
-    // el Master usa datos_globales para evaluar. 
-    // El "resto" de filas que no se repartieron en Scatter NO participan en la búsqueda local de los esclavos,
-    // pero el Master sí podría buscar en ellas. 
-    // Para esta práctica, ignorar esas pocas filas del resto en la búsqueda suele ser aceptable 
-    // dado que son < num_procesos (ej: sobran 2 filas de 10.000).
-    
-    // ** Liberación de memoria y finalización
     if (datos_globales) free(datos_globales);
     if (datos_locales) free(datos_locales);
 

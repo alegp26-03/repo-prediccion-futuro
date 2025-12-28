@@ -1,22 +1,25 @@
 #ifndef K_NN_H
 #define K_NN_H
 
-// Estructura para almacenar un candidato a vecino
+// Estructura interna para usar qsort
 typedef struct {
-    int indice_dia;      // Qué día es (índice global)
-    float distancia;     // Cuánto se parece al patrón buscado
-} Vecino;
+    int indice_dia;
+    float dist_sq; // Distance Squared
+} VecinoInterno;
 
 // Función principal que orquesta todo el proceso
 void ejecutar_predicciones(
-    float *datos_locales,    // Mi trozo de historia
-    int mis_filas,           // Cuántas filas tengo yo
-    int columnas,            // h (24)
-    int k,                   // K vecinos
-    int num_procs,           // Total procesos MPI
-    int pid,                 // Mi ID
-    float *datos_globales,   // Solo válido en Master (para extraer targets)
-    int total_filas          // Total filas en el fichero
+    float *datos_locales,
+    int mis_filas,
+    int columnas,
+    int k,
+    int num_procs,
+    int pid,
+    float *datos_globales,
+    int total_filas,
+    const char* nombre_fichero,
+    double t_lectura,
+    double t_scatter
 );
 
 #endif

@@ -1,3 +1,9 @@
+/*
+ * src/k_nn.c
+ * Implementación optimizada del algoritmo K-Nearest Neighbors
+ * Se ha eliminado qsort global por una inserción ordenada local (Top-K selection).
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -8,233 +14,241 @@
 
 #define MASTERPID 0
 
-// Función auxiliar para comparar vecinos (necesaria para qsort)
+// Función para comparar vecinos (necesaria para el qsort final de los pocos candidatos)
 int comparar_vecinos(const void *a, const void *b) {
-    float distA = ((Vecino *)a)->distancia;
-    float distB = ((Vecino *)b)->distancia;
+    float distA = ((VecinoInterno *)a)->dist_sq;
+    float distB = ((VecinoInterno *)b)->dist_sq;
     if (distA < distB) return -1;
     if (distA > distB) return 1;
     return 0;
 }
 
-// Calcula la distancia euclídea entre dos vectores de tamaño 'cols'
-// Se marca como 'inline' para que el compilador intente optimizarla al máximo
-float calcular_distancia(float *v1, float *v2, int cols) {
-    float suma = 0.0;
-    // Vectorización simple si el compilador lo soporta
+// Cálculo de distancia euclídea al cuadrado (evitamos sqrt para optimizar)
+float calcular_distancia_sq(float *v1, float *v2, int cols) {
+    float suma = 0.0f;
+    // El compilador vectorizará esto automáticamente con las flags -O3 -march=native
     for (int i = 0; i < cols; i++) {
         float diff = v1[i] - v2[i];
         suma += diff * diff;
     }
-    return sqrt(suma);
+    return suma;
+}
+
+// Función auxiliar para mantener la lista de los K mejores vecinos ordenada.
+// Desplaza elementos solo si encontramos un vecino mejor que el peor de nuestra lista.
+void insertar_vecino_ordenado(VecinoInterno *lista, int k, int indice_global, float distancia) {
+    // Si la distancia es peor (mayor) que el último de la lista, no hacemos nada
+    if (distancia >= lista[k-1].dist_sq) return;
+
+    // Inserción ordenada (de atrás hacia adelante)
+    int i = k - 2;
+    while (i >= 0 && lista[i].dist_sq > distancia) {
+        lista[i+1] = lista[i]; // Desplazar a la derecha
+        i--;
+    }
+    // Insertar el nuevo vecino
+    lista[i+1].indice_dia = indice_global;
+    lista[i+1].dist_sq = distancia;
 }
 
 void ejecutar_predicciones(float *datos_locales, int mis_filas, int columnas, int k, 
-                           int num_procs, int pid, float *datos_globales, int total_filas) {
-
-    // Limpiar ficheros de salida en el arranque (Solo Master)
-    if (pid == MASTERPID) {
-        // "w" trunca el fichero a longitud 0 (lo vacía)
-        FILE *fp;
-        fp = fopen("Predicciones.txt", "w"); if(fp) fclose(fp);
-        fp = fopen("MAPE.txt", "w"); if(fp) fclose(fp);
-        // Tiempo.txt NO se borra, se suele acumular ("a") para los logs de pruebas
-    }
+                           int num_procs, int pid, float *datos_globales, int total_filas,
+                           const char* nombre_fichero, double t_lectura, double t_scatter) {
     
-    int num_predicciones = 1000; // Según enunciado
-    // Si el fichero es pequeño (ej: test 1x), ajustamos para no salirnos de rango
-    if (total_filas < num_predicciones + 24) { // +24 margen seguridad
-        num_predicciones = (total_filas > 50) ? 50 : 1; // Fallback para tests pequeños
+    // Configuración del número de predicciones (últimas 1000 filas o menos si el fichero es pequeño)
+    int num_predicciones = 1000;
+    if (total_filas < num_predicciones + 24) {
+        num_predicciones = (total_filas > 50) ? 50 : 1;
         if(pid == MASTERPID) printf("[AVISO] Fichero pequeño. Reduciendo predicciones a %d\n", num_predicciones);
     }
 
-    // Buffers para el patrón a buscar (target) y la predicción
+    // --- RESERVA DE MEMORIA ---
     float *patron_objetivo = (float *)malloc(columnas * sizeof(float));
-    float *valores_reales = (float *)malloc(columnas * sizeof(float)); // El día siguiente real
+    float *valores_reales  = (float *)malloc(columnas * sizeof(float));
     
-    // Variables para métricas
+    // Buffer para guardar los K mejores de ESTE proceso (resultado de combinar hilos)
+    VecinoInterno *mis_top_k = (VecinoInterno *)malloc(k * sizeof(VecinoInterno));
+    
+    // Buffer para que el Maestro recolecte los K mejores de TODOS los procesos
+    VecinoInterno *todos_candidatos = NULL;
+    float *prediccion = NULL;
+    
+    if (pid == MASTERPID) {
+        todos_candidatos = (VecinoInterno *)malloc(num_procs * k * sizeof(VecinoInterno));
+        prediccion = (float *)calloc(columnas, sizeof(float));
+        
+        // Limpiar ficheros de salida
+        FILE *fp;
+        fp = fopen("Predicciones.txt", "w"); if(fp) fclose(fp);
+        fp = fopen("MAPE.txt", "w"); if(fp) fclose(fp);
+    }
+
+    // Preparar buffers para OpenMP
+    int max_hilos = omp_get_max_threads();
+    // Matriz temporal donde cada hilo dejará sus K mejores candidatos
+    VecinoInterno *buffer_hilos = (VecinoInterno *)malloc(max_hilos * k * sizeof(VecinoInterno));
+
     double mape_acumulado = 0.0;
-    double tiempo_inicio, tiempo_fin;
+    double tiempo_inicio = 0.0, tiempo_fin;
+
+    // Variables de profiling
+    double t_acum_calculo = 0.0;      
+    double t_acum_comunicacion = 0.0; 
+    double t_temp_start;              
 
     if (pid == MASTERPID) tiempo_inicio = MPI_Wtime();
 
-    // ==============================================================================
-    // BUCLE PRINCIPAL DE PREDICCIONES
-    // Se evalúan las últimas 'num_predicciones' filas.
-    // ==============================================================================
-    // El índice 'i' representa el día que queremos predecir (índice global)
     int inicio_evaluacion = total_filas - num_predicciones;
 
+    // --- BUCLE PRINCIPAL DE PREDICCIONES ---
     for (int dia_idx = inicio_evaluacion; dia_idx < total_filas; dia_idx++) {
 
-        // --- PASO 1: Master prepara el patrón (día anterior al que queremos predecir) ---
+        // 1. Maestro prepara el patrón
         if (pid == MASTERPID) {
-            // El patrón de búsqueda es el día "dia_idx - 1"
-            // Los datos reales (para calcular el error) son el día "dia_idx"
             int idx_patron = (dia_idx - 1) * columnas;
             int idx_real = dia_idx * columnas;
-            
-            // Copiamos datos a buffers temporales
             for(int j=0; j<columnas; j++) {
                 patron_objetivo[j] = datos_globales[idx_patron + j];
                 valores_reales[j] = datos_globales[idx_real + j];
             }
         }
 
-        // --- PASO 2: Difundir el patrón a todos los procesos ---
-        // Todos necesitan saber QUÉ buscar
+        // 2. Difundir patrón (Comunicaciones)
+        t_temp_start = MPI_Wtime();
         MPI_Bcast(patron_objetivo, columnas, MPI_FLOAT, MASTERPID, MPI_COMM_WORLD);
+        t_acum_comunicacion += (MPI_Wtime() - t_temp_start);
 
-        // --- PASO 3: Búsqueda local (OpenMP) ---
-        // Cada proceso busca en SUS 'mis_filas' los K vecinos más cercanos.
-        
-        // Array local para guardar TODOS los candidatos de este proceso con sus distancias
-        // (Simplificación: Guardamos todos y ordenamos, o usamos un heap. 
-        //  Como 'mis_filas' no es gigante, un array simple + qsort parcial es eficiente y claro para EPD).
-        
-        // OJO: No podemos comparar con el futuro. 
-        // Debemos ignorar filas que sean posteriores al 'dia_idx' que estamos prediciendo.
-        // Como 'datos_locales' es un trozo, necesitamos saber el índice global inicial de este proceso.
-        // Suponemos reparto equitativo simple del main.
+        // 3. CÁLCULO PARALELO LOCAL (Optimizado)
+        t_temp_start = MPI_Wtime();
         int mi_offset_global = pid * (total_filas / num_procs); 
 
-        // Estructura para guardar candidatos locales. 
-        // Tamaño máximo: mis_filas. 
-        Vecino *candidatos_locales = (Vecino *)malloc(mis_filas * sizeof(Vecino));
-        int contador_candidatos = 0;
+        // Región paralela OpenMP
+        #pragma omp parallel
+        {
+            int tid = omp_get_thread_num();
+            // Puntero al trozo de buffer de este hilo
+            VecinoInterno *mi_lista_hilo = &buffer_hilos[tid * k];
 
-        // Región Paralela OpenMP: Cálculo de distancias
-        #pragma omp parallel for schedule(static)
-        for (int i = 0; i < mis_filas; i++) {
-            int indice_global_fila = mi_offset_global + i;
+            // Inicializar la lista del hilo con "distancia infinita"
+            for(int j=0; j<k; j++) {
+                mi_lista_hilo[j].dist_sq = FLT_MAX;
+                mi_lista_hilo[j].indice_dia = -1;
+            }
 
-            // REGLA DE ORO: No usar el futuro para predecir. 
-            // Solo miramos días ANTERIORES al patrón (dia_idx - 1).
-            if (indice_global_fila < dia_idx - 1) {
-                float dist = calcular_distancia(
-                    &datos_locales[i * columnas], 
-                    patron_objetivo, 
-                    columnas
-                );
-                
-                // Guardamos el resultado (esto no es thread-safe si incrementamos contador, 
-                // pero como accedemos por índice 'i' directo, sí lo es si inicializamos todo antes.
-                // Pero para simplificar con contador, usamos una sección crítica o lógica privada).
-                
-                // ESTRATEGIA ROBUSTA OPENMP:
-                // Calcular distancia y guardar en el array directamente en la posición 'i'.
-                // Luego filtramos los válidos.
-                candidatos_locales[i].indice_dia = indice_global_fila;
-                candidatos_locales[i].distancia = dist;
-            } else {
-                // Marca como inválido
-                candidatos_locales[i].distancia = FLT_MAX;
+            // Reparto estático del trabajo
+            #pragma omp for schedule(static) nowait
+            for (int i = 0; i < mis_filas; i++) {
+                int indice_global_fila = mi_offset_global + i;
+
+                // Solo miramos al pasado (evitar mirar el futuro o el mismo día)
+                if (indice_global_fila < dia_idx - 1) {
+                    float dist = calcular_distancia_sq(&datos_locales[i * columnas], patron_objetivo, columnas);
+                    
+                    // Intentar insertar en la lista de los mejores de este hilo
+                    insertar_vecino_ordenado(mi_lista_hilo, k, indice_global_fila, dist);
+                }
+            }
+        } // Fin parallel
+
+        // Reducción local: Unificar los resultados de los hilos en 'mis_top_k'
+        // Copiamos los candidatos del hilo 0 como base
+        for(int j=0; j<k; j++) {
+            mis_top_k[j] = buffer_hilos[0 * k + j];
+        }
+
+        // Fusionamos con los de los demás hilos
+        for(int t=1; t<max_hilos; t++) {
+            VecinoInterno *lista_hilo = &buffer_hilos[t * k];
+            for(int j=0; j<k; j++) {
+                // Si el candidato es válido, intentamos insertarlo en la lista final del proceso
+                if(lista_hilo[j].dist_sq < FLT_MAX) {
+                    insertar_vecino_ordenado(mis_top_k, k, lista_hilo[j].indice_dia, lista_hilo[j].dist_sq);
+                }
             }
         }
+        t_acum_calculo += (MPI_Wtime() - t_temp_start); 
 
-        // Ordenar localmente para obtener los K mejores de ESTE proceso
-        qsort(candidatos_locales, mis_filas, sizeof(Vecino), comparar_vecinos);
-
-        // Seleccionar mis top K (o menos si no tengo suficientes)
-        int k_local = (mis_filas < k) ? mis_filas : k;
-        
-        // --- PASO 4: Reunir resultados en el Master ---
-        // El master necesita recibir los K mejores de cada uno de los N procesos.
-        // Total a recibir: K * num_procs.
-        
-        // Preparamos buffer de envío (mis mejores K)
-        // Serializamos a floats o struct MPI. Para simplificar, enviamos struct con bytes crudos 
-        // (funciona en homogéneo) o creamos tipo MPI. 
-        // POR SIMPLICIDAD ACADÉMICA: Usaremos MPI_Gather de bytes (MPI_BYTE) sobre la struct.
-        
-        Vecino *mis_top_k = (Vecino *)malloc(k * sizeof(Vecino));
-        for(int j=0; j<k; j++) {
-            if (j < mis_filas) mis_top_k[j] = candidatos_locales[j];
-            else mis_top_k[j].distancia = FLT_MAX; // Relleno si faltan
-        }
-
-        Vecino *todos_candidatos = NULL;
-        if (pid == MASTERPID) {
-            todos_candidatos = (Vecino *)malloc(num_procs * k * sizeof(Vecino));
-        }
-
-        MPI_Gather(mis_top_k, k * sizeof(Vecino), MPI_BYTE,
-                   todos_candidatos, k * sizeof(Vecino), MPI_BYTE,
+        // 4. RECOLECCIÓN EN MASTER (Comunicaciones)
+        t_temp_start = MPI_Wtime();
+        // Cada proceso envía sus K mejores
+        MPI_Gather(mis_top_k, k * sizeof(VecinoInterno), MPI_BYTE,
+                   todos_candidatos, k * sizeof(VecinoInterno), MPI_BYTE,
                    MASTERPID, MPI_COMM_WORLD);
+        t_acum_comunicacion += (MPI_Wtime() - t_temp_start);
 
-        // --- PASO 5: Master elige los ganadores y predice ---
+        // 5. MASTER PROCESA Y PREDICE
         if (pid == MASTERPID) {
-            // Ordenar los (num_procs * k) candidatos
-            qsort(todos_candidatos, num_procs * k, sizeof(Vecino), comparar_vecinos);
+            // Ordenar los (P * K) candidatos recibidos para quedarse con los K absolutos
+            qsort(todos_candidatos, num_procs * k, sizeof(VecinoInterno), comparar_vecinos);
 
-            // Calcular predicción (Media de los K mejores)
-            float *prediccion = (float *)calloc(columnas, sizeof(float));
+            // Calcular predicción (media de los K mejores)
+            for(int h=0; h<columnas; h++) prediccion[h] = 0.0f;
             
             for (int v = 0; v < k; v++) {
                 int dia_vecino = todos_candidatos[v].indice_dia;
+                // Ojo: Recuperamos el día SIGUIENTE al vecino
                 int idx_global_vecino_next = (dia_vecino + 1) * columnas;
-                
                 for (int h = 0; h < columnas; h++) {
                     prediccion[h] += datos_globales[idx_global_vecino_next + h];
                 }
             }
-
-            // Dividir por K para la media
             for (int h = 0; h < columnas; h++) prediccion[h] /= k;
 
-            // --- CÁLCULO DEL MAPE ---
-            float error_dia = 0.0;
+            // Calcular MAPE del día
+            float error_dia = 0.0f;
             for (int h = 0; h < columnas; h++) {
-                if (fabs(valores_reales[h]) > 0.0001) { 
-                    error_dia += fabs(valores_reales[h] - prediccion[h]) / fabs(valores_reales[h]);
+                float real = valores_reales[h];
+                if (fabs(real) > 1e-5) {
+                    error_dia += fabs(real - prediccion[h]) / fabs(real);
                 }
             }
-            error_dia = (error_dia / columnas) * 100.0;
+            error_dia = (error_dia / columnas) * 100.0f;
             mape_acumulado += error_dia;
 
-            // --- ESCRITURA EN FICHEROS (NUEVO) ---
-            // 1. Escribir en Predicciones.txt
+            // Guardar en fichero (append)
             FILE *f_pred = fopen("Predicciones.txt", "a");
-            if (f_pred) {
-                for (int h = 0; h < columnas; h++) {
-                    fprintf(f_pred, "%.2f ", prediccion[h]);
-                }
-                fprintf(f_pred, "\n");
-                fclose(f_pred);
+            if(f_pred) { 
+                for(int h=0; h<columnas; h++) fprintf(f_pred, "%.2f ", prediccion[h]); 
+                fprintf(f_pred, "\n"); 
+                fclose(f_pred); 
             }
-
-            // 2. Escribir en MAPE.txt
             FILE *f_mape = fopen("MAPE.txt", "a");
-            if (f_mape) {
-                fprintf(f_mape, "%.2f\n", error_dia);
-                fclose(f_mape);
-            }
-
-            free(todos_candidatos);
-            free(prediccion);
+            if(f_mape) { fprintf(f_mape, "%.2f\n", error_dia); fclose(f_mape); }
         }
-
-        free(candidatos_locales);
-        free(mis_top_k);
     }
 
-    // Liberar recursos comunes
+    // --- LIBERACIÓN DE MEMORIA ---
     free(patron_objetivo);
     free(valores_reales);
+    free(mis_top_k);
+    free(buffer_hilos);
+    if (pid == MASTERPID) { free(todos_candidatos); free(prediccion); }
 
-    // --- RESULTADOS FINALES ---
+    // --- RECOLECCIÓN DE ESTADÍSTICAS ---
+    double total_calc_sum = 0.0;
+    double total_comm_sum = 0.0;
+    MPI_Reduce(&t_acum_calculo, &total_calc_sum, 1, MPI_DOUBLE, MPI_SUM, MASTERPID, MPI_COMM_WORLD);
+    MPI_Reduce(&t_acum_comunicacion, &total_comm_sum, 1, MPI_DOUBLE, MPI_SUM, MASTERPID, MPI_COMM_WORLD);
+
     if (pid == MASTERPID) {
         tiempo_fin = MPI_Wtime();
-        double mape_medio = mape_acumulado / num_predicciones;
-        printf("\n--- FIN DE EJECUCIÓN ---\n");
-        printf("Tiempo Total: %.4f segundos\n", tiempo_fin - tiempo_inicio);
-        printf("MAPE Global Medio: %.2f%%\n", mape_medio);
         
-        // Generar archivo Tiempo.txt como pide el enunciado
-        FILE *f = fopen("Tiempo.txt", "a"); // 'a' para append por si ejecutamos scripts
+        double tiempo_algoritmo = tiempo_fin - tiempo_inicio;
+        double tiempo_total_absoluto = tiempo_algoritmo + t_lectura + t_scatter;
+        
+        double mape_medio = mape_acumulado / num_predicciones;
+        double avg_calc = total_calc_sum / num_procs;
+        double avg_comm = total_comm_sum / num_procs;
+
+        printf("\n--- RESULTADOS (%s) ---\n", nombre_fichero);
+        printf("Tiempo Total: %.4fs\n", tiempo_total_absoluto);
+        printf("MAPE Medio: %.4f%%\n", mape_medio);
+        
+        FILE *f = fopen("Tiempo.txt", "a");
         if (f) {
-            fprintf(f, "Procesos: %d, Hilos: %d, MAPE: %.2f%%, Tiempo: %.4fs\n", 
-                    num_procs, omp_get_max_threads(), mape_medio, tiempo_fin - tiempo_inicio);
+            fprintf(f, "Fichero: %s, K: %d, Procesos: %d, Hilos: %d, MAPE: %.2f%%, T_Total: %.4fs, T_Lectura: %.4fs, T_Scatter: %.4fs, T_Calc(Avg): %.4fs, T_Comm(Avg): %.4fs\n", 
+                    nombre_fichero, k, num_procs, omp_get_max_threads(), mape_medio, 
+                    tiempo_total_absoluto, t_lectura, t_scatter, avg_calc, avg_comm);
             fclose(f);
         }
     }
