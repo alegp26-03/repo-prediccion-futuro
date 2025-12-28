@@ -1,0 +1,1070 @@
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 2000 filas (48000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 21.1293 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 2000 filas (48000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.9798 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 2000 filas (48000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.8782 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 2000 filas (48000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.9354 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+[PID 0] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.6287 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+[PID 0] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 17.2459 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+[PID 0] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 17.4869 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+[PID 0] Recibidas 1000 filas (24000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.8817 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 2] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 0] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 1] Recibidas 666 filas (15984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 20.1270 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 0] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 2] Recibidas 666 filas (15984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 30.1340 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 2] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 0] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 1] Recibidas 666 filas (15984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 16.7449 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 2] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 0] Recibidas 666 filas (15984 elementos). Listo para procesar.
+[PID 1] Recibidas 666 filas (15984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.3366 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 1] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 2] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 3] Recibidas 500 filas (12000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 16.4569 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 1] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 2] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 3] Recibidas 500 filas (12000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 22.6009 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 3] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 0] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 1] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 2] Recibidas 500 filas (12000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 22.3550 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 2000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 2] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 3] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 0] Recibidas 500 filas (12000 elementos). Listo para procesar.
+[PID 1] Recibidas 500 filas (12000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 28.2554 segundos
+MAPE Global Medio: 3.16%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 20000 filas (480000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.2440 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 20000 filas (480000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 24.1474 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 20000 filas (480000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 20.5731 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 20000 filas (480000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 22.6486 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+[PID 0] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.9818 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+[PID 0] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.0789 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+[PID 0] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.6353 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+[PID 0] Recibidas 10000 filas (240000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 21.5588 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 0] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 2] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 19.3485 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 2] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 0] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.1160 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 0] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 2] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 21.3932 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 2] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+[PID 0] Recibidas 6666 filas (159984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 23.8724 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 3] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 1] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 2] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 0] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 17.8663 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 2] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 3] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 1] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 0] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 20.3513 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 2] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 3] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 0] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 25.8025 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 20000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 2] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 0] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+[PID 3] Recibidas 5000 filas (120000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 31.2266 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 200000 filas (4800000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 39.8773 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 200000 filas (4800000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 35.8894 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 200000 filas (4800000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 36.2165 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 200000 filas (4800000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 34.9453 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+[PID 1] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 24.4990 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+[PID 0] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 23.5171 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+[PID 1] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 23.4478 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 0] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+[PID 1] Recibidas 100000 filas (2400000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 22.0115 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 0] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 2] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 21.4611 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 0] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 2] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 21.7071 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 0] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 2] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 24.7407 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 0] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+[PID 2] Recibidas 66666 filas (1599984 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 30.4703 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 2] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 0] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 3] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 18.6706 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 2] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 0] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 3] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 22.1540 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 2] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 0] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 3] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 32.2355 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero leído. Filas: 200000, Columnas (h): 24
+[IO] Lectura completada correctamente.
+[PID 1] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 2] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 0] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+[PID 3] Recibidas 50000 filas (1200000 elementos). Listo para procesar.
+
+--- FIN DE EJECUCIÓN ---
+Tiempo Total: 41.8048 segundos
+MAPE Global Medio: 3.13%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 24.4536s
+  -> Tiempo Cálculo (Promedio/proc): 0.5864s (2.4%)
+  -> Tiempo MPI (Bcast/Gather):      0.0046s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   23.8626s (97.6%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 23.2607s
+  -> Tiempo Cálculo (Promedio/proc): 0.5894s (2.5%)
+  -> Tiempo MPI (Bcast/Gather):      0.0047s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   22.6666s (97.4%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 20.8798s
+  -> Tiempo Cálculo (Promedio/proc): 0.5088s (2.4%)
+  -> Tiempo MPI (Bcast/Gather):      0.0043s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   20.3667s (97.5%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 17.7265s
+  -> Tiempo Cálculo (Promedio/proc): 0.4197s (2.4%)
+  -> Tiempo MPI (Bcast/Gather):      0.0042s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   17.3025s (97.6%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 19.6495s
+  -> Tiempo Cálculo (Promedio/proc): 0.2215s (1.1%)
+  -> Tiempo MPI (Bcast/Gather):      9.7337s (49.5%)
+  -> Overhead (Gestión/IO/Serial):   9.6943s (49.3%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 17.8003s
+  -> Tiempo Cálculo (Promedio/proc): 0.2349s (1.3%)
+  -> Tiempo MPI (Bcast/Gather):      8.8028s (49.5%)
+  -> Overhead (Gestión/IO/Serial):   8.7626s (49.2%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 15.6765s
+  -> Tiempo Cálculo (Promedio/proc): 0.2720s (1.7%)
+  -> Tiempo MPI (Bcast/Gather):      7.7299s (49.3%)
+  -> Overhead (Gestión/IO/Serial):   7.6746s (49.0%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 14.2729s
+  -> Tiempo Cálculo (Promedio/proc): 0.2777s (1.9%)
+  -> Tiempo MPI (Bcast/Gather):      7.0353s (49.3%)
+  -> Overhead (Gestión/IO/Serial):   6.9599s (48.8%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 2] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 0] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 18.8264s
+  -> Tiempo Cálculo (Promedio/proc): 0.1666s (0.9%)
+  -> Tiempo MPI (Bcast/Gather):      12.4747s (66.3%)
+  -> Overhead (Gestión/IO/Serial):   6.1850s (32.9%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 0] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 2] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 15.8440s
+  -> Tiempo Cálculo (Promedio/proc): 0.4659s (2.9%)
+  -> Tiempo MPI (Bcast/Gather):      10.5362s (66.5%)
+  -> Overhead (Gestión/IO/Serial):   4.8419s (30.6%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 2] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 0] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 17.4415s
+  -> Tiempo Cálculo (Promedio/proc): 1.1715s (6.7%)
+  -> Tiempo MPI (Bcast/Gather):      11.5153s (66.0%)
+  -> Overhead (Gestión/IO/Serial):   4.7547s (27.3%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 2] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+[PID 0] Recibidas 1113 filas (26712 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 26.4059s
+  -> Tiempo Cálculo (Promedio/proc): 4.3685s (16.5%)
+  -> Tiempo MPI (Bcast/Gather):      16.8145s (63.7%)
+  -> Overhead (Gestión/IO/Serial):   5.2228s (19.8%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[PID 1] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 2] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 3] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 835 filas (20040 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 21.6645s
+  -> Tiempo Cálculo (Promedio/proc): 0.1998s (0.9%)
+  -> Tiempo MPI (Bcast/Gather):      16.1135s (74.4%)
+  -> Overhead (Gestión/IO/Serial):   5.3511s (24.7%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 2] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 3] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 0] Recibidas 835 filas (20040 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 21.8014s
+  -> Tiempo Cálculo (Promedio/proc): 0.2503s (1.1%)
+  -> Tiempo MPI (Bcast/Gather):      16.1891s (74.3%)
+  -> Overhead (Gestión/IO/Serial):   5.3619s (24.6%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 2] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 3] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 0] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 1] Recibidas 835 filas (20040 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 23.7671s
+  -> Tiempo Cálculo (Promedio/proc): 1.1908s (5.0%)
+  -> Tiempo MPI (Bcast/Gather):      17.6223s (74.1%)
+  -> Overhead (Gestión/IO/Serial):   4.9540s (20.8%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 1] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 2] Recibidas 835 filas (20040 elementos). Listo para procesar.
+[PID 3] Recibidas 835 filas (20040 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 22.5244s
+  -> Tiempo Cálculo (Promedio/proc): 5.4777s (24.3%)
+  -> Tiempo MPI (Bcast/Gather):      14.5509s (64.6%)
+  -> Overhead (Gestión/IO/Serial):   2.4958s (11.1%)
+MAPE Global Medio: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 33410 filas (801840 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 23.0646s
+  -> Tiempo Cálculo (Promedio/proc): 5.2600s (22.8%)
+  -> Tiempo MPI (Bcast/Gather):      0.0055s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   17.7991s (77.2%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 33410 filas (801840 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 21.2910s
+  -> Tiempo Cálculo (Promedio/proc): 3.8373s (18.0%)
+  -> Tiempo MPI (Bcast/Gather):      0.0047s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   17.4491s (82.0%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 33410 filas (801840 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 19.8800s
+  -> Tiempo Cálculo (Promedio/proc): 3.7338s (18.8%)
+  -> Tiempo MPI (Bcast/Gather):      0.0045s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   16.1417s (81.2%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 33410 filas (801840 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 18.9795s
+  -> Tiempo Cálculo (Promedio/proc): 4.2194s (22.2%)
+  -> Tiempo MPI (Bcast/Gather):      0.0051s (0.0%)
+  -> Overhead (Gestión/IO/Serial):   14.7551s (77.7%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+[PID 0] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 21.3865s
+  -> Tiempo Cálculo (Promedio/proc): 2.5536s (11.9%)
+  -> Tiempo MPI (Bcast/Gather):      9.4811s (44.3%)
+  -> Overhead (Gestión/IO/Serial):   9.3519s (43.7%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+[PID 0] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 28.5865s
+  -> Tiempo Cálculo (Promedio/proc): 2.5630s (9.0%)
+  -> Tiempo MPI (Bcast/Gather):      13.0853s (45.8%)
+  -> Overhead (Gestión/IO/Serial):   12.9382s (45.3%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+[PID 1] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 18.9232s
+  -> Tiempo Cálculo (Promedio/proc): 3.0372s (16.1%)
+  -> Tiempo MPI (Bcast/Gather):      8.0674s (42.6%)
+  -> Overhead (Gestión/IO/Serial):   7.8186s (41.3%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+[PID 0] Recibidas 16705 filas (400920 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 17.9359s
+  -> Tiempo Cálculo (Promedio/proc): 3.0482s (17.0%)
+  -> Tiempo MPI (Bcast/Gather):      7.5937s (42.3%)
+  -> Overhead (Gestión/IO/Serial):   7.2941s (40.7%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 0] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 2] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 20.0514s
+  -> Tiempo Cálculo (Promedio/proc): 2.1760s (10.9%)
+  -> Tiempo MPI (Bcast/Gather):      12.0202s (59.9%)
+  -> Overhead (Gestión/IO/Serial):   5.8552s (29.2%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 2] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 0] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 21.6216s
+  -> Tiempo Cálculo (Promedio/proc): 2.5248s (11.7%)
+  -> Tiempo MPI (Bcast/Gather):      12.9111s (59.7%)
+  -> Overhead (Gestión/IO/Serial):   6.1858s (28.6%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 0] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 2] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 19.7264s
+  -> Tiempo Cálculo (Promedio/proc): 2.7336s (13.9%)
+  -> Tiempo MPI (Bcast/Gather):      11.6556s (59.1%)
+  -> Overhead (Gestión/IO/Serial):   5.3372s (27.1%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 0] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+[PID 2] Recibidas 11136 filas (267264 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 20.4634s
+  -> Tiempo Cálculo (Promedio/proc): 3.6747s (18.0%)
+  -> Tiempo MPI (Bcast/Gather):      11.9275s (58.3%)
+  -> Overhead (Gestión/IO/Serial):   4.8612s (23.8%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 2] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 3] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 0] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 20.8560s
+  -> Tiempo Cálculo (Promedio/proc): 1.8913s (9.1%)
+  -> Tiempo MPI (Bcast/Gather):      14.3153s (68.6%)
+  -> Overhead (Gestión/IO/Serial):   4.6495s (22.3%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 2] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 3] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 0] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 19.6278s
+  -> Tiempo Cálculo (Promedio/proc): 1.9470s (9.9%)
+  -> Tiempo MPI (Bcast/Gather):      13.4423s (68.5%)
+  -> Overhead (Gestión/IO/Serial):   4.2385s (21.6%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 1] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 2] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 3] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 0] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 26.2430s
+  -> Tiempo Cálculo (Promedio/proc): 3.7730s (14.4%)
+  -> Tiempo MPI (Bcast/Gather):      17.8582s (68.0%)
+  -> Overhead (Gestión/IO/Serial):   4.6118s (17.6%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 1] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 2] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+[PID 3] Recibidas 8352 filas (200448 elementos). Listo para procesar.
+
+--- RESULTADOS CON TRAZAS (PROFILING) ---
+Tiempo Total Real (Wall Clock): 26.8363s
+  -> Tiempo Cálculo (Promedio/proc): 7.9182s (29.5%)
+  -> Tiempo MPI (Bcast/Gather):      15.8840s (59.2%)
+  -> Overhead (Gestión/IO/Serial):   3.0340s (11.3%)
+MAPE Global Medio: 0.00%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 22.6736s
+MAPE Global: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 21.4647s
+MAPE Global: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 20.6555s
+MAPE Global: 3.09%
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 3341 filas (80184 elementos). Listo para procesar.
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+[PID 0] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[PID 1] Recibidas 1670 filas (40080 elementos). Listo para procesar.
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 23.2646s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 21.9416s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 20.6575s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 17.7911s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 19.5181s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 18.1935s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 16.3707s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 15.1329s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 18.9975s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 16.6099s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 14.6986s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 15.1209s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 18.9323s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 17.0054s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 16.7612s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (644820 bytes).
+[IO] Cabecera parseada. Filas: 3341, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_1X.txt) ---
+Tiempo Total: 20.3173s
+RESULTADO_MAPE: 3.0343
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 23.5017s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 22.4028s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 22.8374s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 20.3625s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 21.8908s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 20.9809s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 20.0830s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 19.5890s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 22.4548s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 21.0384s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 20.7311s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 21.2368s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 22.3101s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 21.2782s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 21.8863s
+RESULTADO_MAPE: 0.0000
+[IO] Fichero cargado en memoria con MPI_File_read (6448138 bytes).
+[IO] Cabecera parseada. Filas: 33410, Columnas: 24
+[IO] Parseo completado exitosamente.
+
+--- RESULTADOS (data/datos_10X.txt) ---
+Tiempo Total: 25.3930s
+RESULTADO_MAPE: 0.0000
